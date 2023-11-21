@@ -31,6 +31,7 @@
             this.dtg_Show = new System.Windows.Forms.DataGridView();
             this.btn_Show = new System.Windows.Forms.Button();
             this.btn_ADO = new System.Windows.Forms.Button();
+            this.cbb_Table = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Show)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,11 +69,29 @@
             this.btn_ADO.UseVisualStyleBackColor = true;
             this.btn_ADO.Click += new System.EventHandler(this.btn_ADO_Click);
             // 
+            // cbb_Table
+            // 
+            this.cbb_Table.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_Table.FormattingEnabled = true;
+            this.cbb_Table.Items.AddRange(new object[] {
+            "CONGVIEC",
+            "DEAN",
+            "DIADIEM_PHG",
+            "NHANVIEN",
+            "PHANCONG",
+            "PHONGBAN",
+            "THANNHAN"});
+            this.cbb_Table.Location = new System.Drawing.Point(96, 514);
+            this.cbb_Table.Name = "cbb_Table";
+            this.cbb_Table.Size = new System.Drawing.Size(331, 36);
+            this.cbb_Table.TabIndex = 2;
+            // 
             // Form_QuanLyNYC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 653);
+            this.Controls.Add(this.cbb_Table);
             this.Controls.Add(this.btn_ADO);
             this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.dtg_Show);
@@ -88,5 +107,6 @@
         private DataGridView dtg_Show;
         private Button btn_Show;
         private Button btn_ADO;
+        private ComboBox cbb_Table;
     }
 }

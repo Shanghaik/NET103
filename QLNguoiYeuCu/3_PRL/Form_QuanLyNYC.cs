@@ -87,10 +87,39 @@ namespace QLNguoiYeuCu._3_PRL
             // Hiển thị dữ liệu đó lên MessageBox
             MessageBox.Show($"Bạn đã bỏ em {Ten} sau {Thoigian}");
         }
-
+        // ADO.net là một công nghệ cho phép chúng ta thực hiện tương tác với CSDL thông qua
+        // các câu lệnh bàng cách thực thi các truy vấn như trên SQL bình thường nhưng truy
+        // vấn đó được viết trên code
         private void btn_ADO_Click(object sender, EventArgs e)
         {
-
+            // Connection string: là một chuỗi chứa các thông tin liên quan tới CSDL - Hệ quản trị CSDL
+            // và các thiết lập để có thể thông qua đó thực hiện kết nối với CSDL mon muốn
+            // Các thông tin thường bao gồm: Data Source: Tên Server, Initital Catalog: Tên DB
+            // các thông tin liên quan tới tài khoản, mật khẩu và config cho DB... 
+            string connectionString = @"Data Source=SHANGHAIK;Initial Catalog=QLDA;
+            Integrated Security=True;TrustServerCertificate=Yes";
+            // Tạo 1 dataTable để hứng kết quả trả về từ SQL
+            DataTable data = new DataTable();
+            // Tạo 1 kết nối Connection với connectionstring vừa tạo ra
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open(); // Mở kết nối
+                             // Viết câu truy vấn
+                string tableName = cbb_Table.SelectedItem.ToString();
+                string query = $"Select * from {tableName}";
+                // Thực hiện chạy câu truy vấn bằng cách tạo ra 1 command với truy vấn và liên kết đã tạo
+                SqlCommand command = new SqlCommand(query, conn);
+                // Tạo 1 dataAdapter để chứa data sau khi chạy truy vấn với command
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data); // Đẩy dữ liệu vào datatable
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally { conn.Close(); }// Đóng kết nối
+            dtg_Show.DataSource = data;
         }
     }
 }
