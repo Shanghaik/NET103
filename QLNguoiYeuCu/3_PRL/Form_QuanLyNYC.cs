@@ -106,7 +106,7 @@ namespace QLNguoiYeuCu._3_PRL
             {
                 conn.Open(); // Mở kết nối
                              // Viết câu truy vấn
-                string tableName = cbb_Table.SelectedItem.ToString();
+                string tableName = cbb_Table.SelectedItem.ToString(); // Đã tạo sẵn 1 combobox để lưu các tên bảng cho mình chọn
                 string query = $"Select * from {tableName}";
                 // Thực hiện chạy câu truy vấn bằng cách tạo ra 1 command với truy vấn và liên kết đã tạo
                 SqlCommand command = new SqlCommand(query, conn);
@@ -120,6 +120,41 @@ namespace QLNguoiYeuCu._3_PRL
             }
             finally { conn.Close(); }// Đóng kết nối
             dtg_Show.DataSource = data;
+        }
+
+        private void cONGVIECToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Thử add một vài control vào trong panel
+            Label lb1 = new Label(); // Add label
+            lb1.Text = "Mã dự án";
+            Label lb2 = new Label(); // Add label
+            lb2.Text = "STT";
+            Label lb3 = new Label(); // Add label
+            lb3.Text = "Tên Công việc";
+            lb1.Parent = pn_Add;
+            lb2.Parent = pn_Add;
+            lb3.Parent = pn_Add;
+            // set vị trí cho label trong panel 
+            lb1.Location = new Point(40, 50);
+            lb2.Location = new Point(40, 100); // 0 là tọa độ ngang, 150 là tọa độ dọc
+            lb3.Location = new Point(40, 150);
+            //pn_Add.Controls.Add(lb1); // Thêm label vào trong panel
+            //pn_Add.Controls.Add(lb2);
+            //pn_Add.Controls.Add(lb3);
+            TextBox tb_MDA = new TextBox(); tb_MDA.Parent = pn_Add; tb_MDA.Location = new Point(150, 50);
+            TextBox tb_STT = new TextBox(); tb_STT.Parent = pn_Add; tb_STT.Location = new Point(150, 100);
+            TextBox tb_TCV = new TextBox(); tb_TCV.Parent = pn_Add; tb_TCV.Location = new Point(150, 150);
+            tb_MDA.Width = 300; tb_STT.Width = 300; tb_TCV.Width = 300;
+            Button bt_Add = new Button(); bt_Add.Text = "Thêm"; bt_Add.Parent = pn_Add;
+            bt_Add.Location = new Point(150, 200);
+            bt_Add.Height = 50; bt_Add.Width = 150;
+            bt_Add.Font = new Font("Arial", 14); bt_Add.BackColor = Color.Yellow; // Set font chữ và màu
+            bt_Add.Click += Bt_Add_Click; // Tạo sự kiện cho Button vừa thêm
+        }
+
+        private void Bt_Add_Click(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
