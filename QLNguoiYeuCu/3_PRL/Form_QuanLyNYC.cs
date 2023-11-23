@@ -20,7 +20,7 @@ namespace QLNguoiYeuCu._3_PRL
         // Các thông tin thường bao gồm: Data Source: Tên Server, Initital Catalog: Tên DB
         // các thông tin liên quan tới tài khoản, mật khẩu và config cho DB... 
         string connectionString = @"Data Source=SHANGHAIK;Initial Catalog=QLDA;Integrated Security=True;TrustServerCertificate=Yes";
-        string maDA = "", stt = "", tenCV = ""; 
+        string maDA = "", stt = "", tenCV = ""; // 3 biến để lưu giá trị tạm thời cho câu truy vấn
         public Form_QuanLyNYC()
         {
             InitializeComponent();
