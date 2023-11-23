@@ -9,11 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QLNguoiYeuCu._3_PRL
 {
     public partial class Form_QuanLyNYC : Form
     {
+        // Connection string: là một chuỗi chứa các thông tin liên quan tới CSDL - Hệ quản trị CSDL
+        // và các thiết lập để có thể thông qua đó thực hiện kết nối với CSDL mon muốn
+        // Các thông tin thường bao gồm: Data Source: Tên Server, Initital Catalog: Tên DB
+        // các thông tin liên quan tới tài khoản, mật khẩu và config cho DB... 
+        string connectionString = @"Data Source=SHANGHAIK;Initial Catalog=QLDA;Integrated Security=True;TrustServerCertificate=Yes";
+        string maDA = "", stt = "", tenCV = ""; 
         public Form_QuanLyNYC()
         {
             InitializeComponent();
@@ -96,8 +103,6 @@ namespace QLNguoiYeuCu._3_PRL
             // và các thiết lập để có thể thông qua đó thực hiện kết nối với CSDL mon muốn
             // Các thông tin thường bao gồm: Data Source: Tên Server, Initital Catalog: Tên DB
             // các thông tin liên quan tới tài khoản, mật khẩu và config cho DB... 
-            string connectionString = @"Data Source=SHANGHAIK;Initial Catalog=QLDA;
-            Integrated Security=True;TrustServerCertificate=Yes";
             // Tạo 1 dataTable để hứng kết quả trả về từ SQL
             DataTable data = new DataTable();
             // Tạo 1 kết nối Connection với connectionstring vừa tạo ra
@@ -150,11 +155,47 @@ namespace QLNguoiYeuCu._3_PRL
             bt_Add.Height = 50; bt_Add.Width = 150;
             bt_Add.Font = new Font("Arial", 14); bt_Add.BackColor = Color.Yellow; // Set font chữ và màu
             bt_Add.Click += Bt_Add_Click; // Tạo sự kiện cho Button vừa thêm
+            // Tạo sự kiện TextChange cho các TextBox
+            tb_MDA.TextChanged += Tb_MDA_TextChanged;
+            tb_STT.TextChanged += Tb_STT_TextChanged;
+            tb_TCV.TextChanged += Tb_TCV_TextChanged;
+        }
+
+        private void Tb_TCV_TextChanged(object? sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            tenCV = textBox.Text;
+        }
+
+        private void Tb_STT_TextChanged(object? sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            stt = textBox.Text;
+        }
+
+        private void Tb_MDA_TextChanged(object? sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            maDA = textBox.Text;
         }
 
         private void Bt_Add_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string query = $"insert into CONGVIEC values ({maDA},{stt},N'{tenCV}')";
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open(); // Mở kết nối 
+                // Thực hiện chạy câu truy vấn bằng cách tạo ra 1 command với truy vấn và liên kết đã tạo
+                SqlCommand command = new SqlCommand(query, conn);
+                int count = command.ExecuteNonQuery(); // Phương thức này trả về số dòng affected (chạy tành công)
+                MessageBox.Show("Bạn đã thêm thành công");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally { conn.Close(); }// Đóng kết nối
         }
     }
 }
