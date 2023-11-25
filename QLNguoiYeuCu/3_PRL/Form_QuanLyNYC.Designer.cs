@@ -41,6 +41,7 @@
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pn_Add = new System.Windows.Forms.Panel();
+            this.btn_Add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Show)).BeginInit();
             this.ms_CRUD.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             this.btn_Show.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Show.Location = new System.Drawing.Point(17, 325);
             this.btn_Show.Name = "btn_Show";
-            this.btn_Show.Size = new System.Drawing.Size(238, 52);
+            this.btn_Show.Size = new System.Drawing.Size(148, 52);
             this.btn_Show.TabIndex = 1;
             this.btn_Show.Text = "Hiện";
             this.btn_Show.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
             // btn_ADO
             // 
             this.btn_ADO.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_ADO.Location = new System.Drawing.Point(323, 325);
+            this.btn_ADO.Location = new System.Drawing.Point(195, 325);
             this.btn_ADO.Name = "btn_ADO";
-            this.btn_ADO.Size = new System.Drawing.Size(238, 52);
+            this.btn_ADO.Size = new System.Drawing.Size(218, 52);
             this.btn_ADO.TabIndex = 1;
             this.btn_ADO.Text = "Load từ CSDL";
             this.btn_ADO.UseVisualStyleBackColor = true;
@@ -91,9 +92,9 @@
             "PHANCONG",
             "PHONGBAN",
             "THANNHAN"});
-            this.cbb_Table.Location = new System.Drawing.Point(623, 338);
+            this.cbb_Table.Location = new System.Drawing.Point(641, 338);
             this.cbb_Table.Name = "cbb_Table";
-            this.cbb_Table.Size = new System.Drawing.Size(238, 36);
+            this.cbb_Table.Size = new System.Drawing.Size(220, 36);
             this.cbb_Table.TabIndex = 2;
             // 
             // ms_CRUD
@@ -165,14 +166,26 @@
             this.pn_Add.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pn_Add.Location = new System.Drawing.Point(12, 396);
             this.pn_Add.Name = "pn_Add";
-            this.pn_Add.Size = new System.Drawing.Size(853, 269);
+            this.pn_Add.Size = new System.Drawing.Size(853, 301);
             this.pn_Add.TabIndex = 4;
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Add.Location = new System.Drawing.Point(435, 326);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(165, 48);
+            this.btn_Add.TabIndex = 5;
+            this.btn_Add.Text = "Add Form";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // Form_QuanLyNYC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 709);
+            this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.pn_Add);
             this.Controls.Add(this.cbb_Table);
             this.Controls.Add(this.btn_ADO);
@@ -205,5 +218,6 @@
         private ToolStripMenuItem xóaToolStripMenuItem;
         private ToolStripMenuItem pHONGBANToolStripMenuItem;
         private Panel pn_Add;
+        private Button btn_Add;
     }
 }

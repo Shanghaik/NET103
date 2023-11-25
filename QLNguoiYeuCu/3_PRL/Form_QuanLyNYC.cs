@@ -173,6 +173,17 @@ namespace QLNguoiYeuCu._3_PRL
             stt = textBox.Text;
         }
 
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo 1 form mới 
+            Form_XoaDA xoada = new Form_XoaDA();
+            xoada.TopLevel = false; // Thiết lập Form không còn là top level - thành phần chứa
+            // Set BorderStyle = None để mất đi khung bên ngoài
+            xoada.FormBorderStyle = FormBorderStyle.None;
+            xoada.Parent = pn_Add;
+            xoada.Show();
+        }
+
         private void Tb_MDA_TextChanged(object? sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
