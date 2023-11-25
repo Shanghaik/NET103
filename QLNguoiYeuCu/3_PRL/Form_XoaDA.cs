@@ -54,5 +54,39 @@ namespace QLNguoiYeuCu._3_PRL
             // Bước 3: Khi chọn 1 item trong combobox ta ghi nhớ lại tên đó
             // => Truy vấn ngược để xóa theo tên đó
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex == -1) { MessageBox.Show("Hãy chọn tên để xóa"); }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa đối tượng này?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection conn = new SqlConnection(connectionString);
+                    try
+                    {
+                        conn.Open(); // Mở kết nối
+                                     // Viết câu truy vấn
+                        string deleteName = comboBox1.SelectedItem.ToString(); // Lấy tên cần xóa từ combobox
+                        string query = $"Delete from THANNHAN where TENtn = N'{deleteName}'";
+                        // Thực hiện chạy câu truy vấn bằng cách tạo ra 1 command với truy vấn và liên kết đã tạo
+                        SqlCommand command = new SqlCommand(query, conn);
+                        // Thực thi truy vấn
+                        command.ExecuteNonQuery();
+                        MessageBox.Show($"Đã xóa đối tượng tên {deleteName}");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally { conn.Close(); }// Đóng kết nối
+                }
+                else
+                {
+                    MessageBox.Show(@"Không muốn xóa thì chọn làm gì???? ¯\_(ツ)_/¯");
+                } 
+            }   
+        }
     }
 }
