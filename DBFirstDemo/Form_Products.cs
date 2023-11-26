@@ -50,5 +50,31 @@ namespace DBFirstDemo
                 // Sau mỗi lần add thì stt tự + lên 1 đơn vị
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtg_Show_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Click vào content - nội dung
+        }
+
+        private void dtg_Show_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Khi click vào ô của bảng mà có index > 0
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtg_Show.Rows[e.RowIndex]; // Lấy ra dòng mà mình chọn
+                tbt_ID.Text = row.Cells[1].Value.ToString(); tbt_ID.Enabled = false; // Ẩn cột ID ko cho sửa
+                tbt_Ten.Text = row.Cells[2].Value.ToString();
+                tbt_Gia.Text = row.Cells[3].Value.ToString();
+                tbt_Soluong.Text = row.Cells[4].Value.ToString();
+                tbt_Trangthai.Text = row.Cells[5].Value.ToString();
+                tbt_NhaSX.Text = row.Cells[6].Value.ToString();
+                tbt_Mota.Text = row.Cells[7].Value.ToString();
+            }
+        }
     }
 }
