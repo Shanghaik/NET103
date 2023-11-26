@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNguoiYeuCu", "QLNguoiYeuCu\QLNguoiYeuCu.csproj", "{88D50FAF-3819-4676-9F62-F10AB3991152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QLNguoiYeuCu", "QLNguoiYeuCu\QLNguoiYeuCu.csproj", "{88D50FAF-3819-4676-9F62-F10AB3991152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFirstDemo", "DBFirstDemo\DBFirstDemo.csproj", "{557BF255-2064-4082-8170-F323A9E604FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{88D50FAF-3819-4676-9F62-F10AB3991152}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D50FAF-3819-4676-9F62-F10AB3991152}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D50FAF-3819-4676-9F62-F10AB3991152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557BF255-2064-4082-8170-F323A9E604FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557BF255-2064-4082-8170-F323A9E604FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557BF255-2064-4082-8170-F323A9E604FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557BF255-2064-4082-8170-F323A9E604FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

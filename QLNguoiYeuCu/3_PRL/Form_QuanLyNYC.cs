@@ -175,6 +175,7 @@ namespace QLNguoiYeuCu._3_PRL
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            pn_Add.Controls.Clear();
             // Khởi tạo 1 form mới 
             Form_XoaDA xoada = new Form_XoaDA();
             xoada.TopLevel = false; // Thiết lập Form không còn là top level - thành phần chứa
