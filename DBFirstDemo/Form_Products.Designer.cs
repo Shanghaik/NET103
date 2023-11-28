@@ -84,6 +84,7 @@
             this.btn_Add.TabIndex = 1;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Update
             // 
@@ -94,6 +95,7 @@
             this.btn_Update.TabIndex = 1;
             this.btn_Update.Text = "Sửa";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Delete
             // 
@@ -104,6 +106,7 @@
             this.btn_Delete.TabIndex = 1;
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // tbt_ID
             // 
@@ -112,16 +115,14 @@
             this.tbt_ID.Name = "tbt_ID";
             this.tbt_ID.Size = new System.Drawing.Size(639, 30);
             this.tbt_ID.TabIndex = 2;
-            this.tbt_ID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbt_Ten
             // 
             this.tbt_Ten.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbt_Ten.Location = new System.Drawing.Point(203, 448);
+            this.tbt_Ten.Location = new System.Drawing.Point(203, 445);
             this.tbt_Ten.Name = "tbt_Ten";
             this.tbt_Ten.Size = new System.Drawing.Size(639, 30);
             this.tbt_Ten.TabIndex = 2;
-            this.tbt_Ten.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbt_Gia
             // 
@@ -130,7 +131,6 @@
             this.tbt_Gia.Name = "tbt_Gia";
             this.tbt_Gia.Size = new System.Drawing.Size(639, 30);
             this.tbt_Gia.TabIndex = 2;
-            this.tbt_Gia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbt_Soluong
             // 
@@ -139,7 +139,6 @@
             this.tbt_Soluong.Name = "tbt_Soluong";
             this.tbt_Soluong.Size = new System.Drawing.Size(639, 30);
             this.tbt_Soluong.TabIndex = 2;
-            this.tbt_Soluong.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbt_Trangthai
             // 
@@ -148,7 +147,6 @@
             this.tbt_Trangthai.Name = "tbt_Trangthai";
             this.tbt_Trangthai.Size = new System.Drawing.Size(639, 30);
             this.tbt_Trangthai.TabIndex = 2;
-            this.tbt_Trangthai.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbt_NhaSX
             // 
@@ -157,7 +155,6 @@
             this.tbt_NhaSX.Name = "tbt_NhaSX";
             this.tbt_NhaSX.Size = new System.Drawing.Size(639, 30);
             this.tbt_NhaSX.TabIndex = 2;
-            this.tbt_NhaSX.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbt_Mota
             // 
@@ -166,13 +163,12 @@
             this.tbt_Mota.Name = "tbt_Mota";
             this.tbt_Mota.Size = new System.Drawing.Size(639, 30);
             this.tbt_Mota.TabIndex = 2;
-            this.tbt_Mota.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(51, 400);
+            this.label1.Location = new System.Drawing.Point(54, 404);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 23);
             this.label1.TabIndex = 3;
@@ -264,6 +260,7 @@
             this.Controls.Add(this.dtg_Show);
             this.Name = "Form_Products";
             this.Text = "Form_Products";
+            this.Load += new System.EventHandler(this.Form_Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Show)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
