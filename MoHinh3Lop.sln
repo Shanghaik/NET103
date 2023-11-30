@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QLNguoiYeuCu", "QLNguoiYeuCu\QLNguoiYeuCu.csproj", "{88D50FAF-3819-4676-9F62-F10AB3991152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFirstDemo", "DBFirstDemo\DBFirstDemo.csproj", "{557BF255-2064-4082-8170-F323A9E604FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBFirstDemo", "DBFirstDemo\DBFirstDemo.csproj", "{557BF255-2064-4082-8170-F323A9E604FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Three_Layer", "Three_Layer\Three_Layer.csproj", "{D30D3FD7-D1AC-4496-9D63-E41DDA2075C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{557BF255-2064-4082-8170-F323A9E604FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{557BF255-2064-4082-8170-F323A9E604FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{557BF255-2064-4082-8170-F323A9E604FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30D3FD7-D1AC-4496-9D63-E41DDA2075C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30D3FD7-D1AC-4496-9D63-E41DDA2075C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30D3FD7-D1AC-4496-9D63-E41DDA2075C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30D3FD7-D1AC-4496-9D63-E41DDA2075C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
